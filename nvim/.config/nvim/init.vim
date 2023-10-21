@@ -26,6 +26,12 @@ set nocompatible
 " this allows me to execute bash functions from vim with !
 set shell=bash\ --login
 
+" Highlight cursor line underneath the cursor horizontally.
+set cursorline
+
+" Highlight cursor line underneath the cursor vertically.
+"set cursorcolumn
+
 """ Mappings
 
 " leader key

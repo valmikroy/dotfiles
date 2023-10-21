@@ -9,3 +9,13 @@ function _git_top_level {
   fi
 
 }
+
+function _git_fast_publish {
+
+  read -p "Provide git commit message: " message 
+
+  git add *
+  git commit -m "$message"
+  git push 
+
+}
