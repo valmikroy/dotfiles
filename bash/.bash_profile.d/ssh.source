@@ -1,0 +1,15 @@
+function _sshagent {
+  execute ssh-add -l > /dev/null 2>&1
+  if [ $? -ne 0 ]
+  then
+      AGENT=`find /tmp -path '*/ssh-*' -name 'agent*' -uid $(id -u) -printf "%T+\t%p\n" 2>/dev/null | sort | tail -n1 | awk -F'\t' '{print \$2 }'`
+      if [ -z $AGENT ]
+      then
+        ssh-agent 
+        echo "New ssh-agent started, please add keys"
+      else
+        export SSH_AUTH_SOCK=$AGENT
+      fi
+  fi
+  ssh-add -l
+}
