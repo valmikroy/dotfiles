@@ -32,3 +32,17 @@ function yes_no  {
 function _reload {
 	for f in  `ls $HOME/.bash_profile.d`; do source   $HOME/.bash_profile.d/${f} ; done
 }
+
+
+
+function _check_port {
+
+  if command -v nc &> /dev/null
+  then
+    nc -vz  $1 $2
+  else
+    echo "Install Netcat"
+  fi
+
+}
+
