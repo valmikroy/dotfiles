@@ -33,6 +33,11 @@ set cursorline
 "set cursorcolumn
 
 """ Mappings
+" paste toggle 
+nnoremap <F2> :set invpaste paste?<CR>
+imap <F2> <C-O>:set invpaste paste?<CR>
+set pastetoggle=<F2>
+
 
 " leader key
 let mapleader=","
