@@ -1,8 +1,16 @@
-export RED="\033[1;31m"
-export GREEN="\033[1;32m"
-export YELLOW="\033[1;33m"
-export BLUE="\033[1;34m"
-export PURPLE="\033[1;35m"
-export CYAN="\033[1;36m"
-export GREY="\033[0;37m"
-export RESET="\033[m"
+C_BOLD=1
+
+C_FG_WHITE=97
+C_FG_GREEN=32
+C_FG_YELLOW=33
+
+C_BG_LIGHT_BLUE=104
+C_BG_LIGHT_GREEN=102
+C_BG_LIGHT_GRAY=47
+C_BG_DARK_GRAY=100
+
+
+C_START="\033["
+C_END="\033[0m"
+
+# echo -e "${C_START}${C_BOLD};${C_FG_YELLOW};${C_BG_LIGHT_BLUE}m blah ${C_END}"
