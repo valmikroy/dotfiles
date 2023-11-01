@@ -1,4 +1,4 @@
 _prompt() {
-    PS1="[\u:\w:${C_START}${C_BOLD};${C_FG_YELLOW};${C_BG_LIGHT_BLUE}m${K8SNS} ${C_END}$]"
+    PS1="[\u:\w:${C_START}${C_BOLD};${C_FG_YELLOW};${C_BG_LIGHT_BLUE}m${K8SNS} ${C_END}]$"
 }
 PROMPT_COMMAND=_prompt
