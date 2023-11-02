@@ -48,7 +48,7 @@ function _check_port {
 
 
 
-function execute {
+function __wrap_exec {
     set -x	
     $@
     set +x
