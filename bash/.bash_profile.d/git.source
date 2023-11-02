@@ -20,3 +20,5 @@ function _git_fast_publish {
   git status
 
 }
+
+alias _git_stat="git status"
