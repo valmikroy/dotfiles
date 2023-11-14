@@ -21,4 +21,13 @@ function _git_fast_publish {
 
 }
 
+function _git_empty_commit {
+  git commit --allow-empty -m "Empty-Commit"
+}
+
+function _git_push_new_branch_to_remote {
+  BRANCH=`git branch --show-current`
+  git push --set-upstream origin $BRANCH
+}
+
 alias _git_stat="git status"
