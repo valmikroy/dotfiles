@@ -2,6 +2,6 @@
 #    PS1="[\u:\w:${C_START}${C_BOLD};${C_FG_YELLOW};${C_BG_LIGHT_BLUE}m${CUSTOM_VAR} ${C_END}]$ "
 #}
 _prompt() {
-    PS1="[\u:\W:${CUSTOM_VAR}]$ "
+    PS1="[\u@\h:\W:${CUSTOM_VAR}]$ "
 }
 PROMPT_COMMAND=_prompt
