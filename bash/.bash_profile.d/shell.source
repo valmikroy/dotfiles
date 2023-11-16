@@ -33,6 +33,77 @@ function _reload {
 	for f in  `ls $HOME/.bash_profile.d`; do source   $HOME/.bash_profile.d/${f} ; done
 }
 
+function _enable_minikube {
+  alias kubectl="minikube kubectl --"
+
+}
+
+function _islinux {
+  local OS=`uname -s`
+
+  if [ "${OS}" == "Linux" ]
+  then
+      return 0
+  fi
+  return 1
+
+}
+
+function _sctl_list {
+
+  if [ _islinux ]
+  then
+    sudo  systemctl --type=service --state=running
+  fi 
+}
+
+function _sctl_restart {
+  local SRV=$1
+
+  if [ -z $SRV ]
+  then
+  echo " Provide service name  "
+  return 1
+  fi 
+
+  if [ _islinux ]
+  then
+    sudo systemctl restart $SRV
+  fi 
+
+}
+
+function _sctl_status {
+  local SRV=$1
+
+  if [ -z $SRV ]
+  then
+  echo " Provide service name  "
+  return 1
+  fi 
+
+  if [ _islinux ]
+  then
+    sudo systemctl status $SRV
+  fi 
+
+}
+
+function _jctl_logs {
+  local SRV=$1
+
+  if [ -z $SRV ]
+  then
+  echo " Provide service name  "
+  return 1
+  fi 
+
+  if [ _islinux ]
+  then
+    sudo  journalctl -u $SRV --no-pager
+  fi 
+
+}
 
 
 function _check_port {
@@ -58,3 +129,5 @@ function __wrap_exec {
     fi
     return $status
 }
+
+
