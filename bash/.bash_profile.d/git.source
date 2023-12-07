@@ -30,4 +30,14 @@ function _git_push_new_branch_to_remote {
   git push --set-upstream origin $BRANCH
 }
 
+function _git_create_new_branch {
+  BRANCH=$1
+  if [ -z $BRANCH ]
+  then
+    echo "Provide branch name"
+    return 1
+  fi 
+  execute git checkout -b $BRANCH
+}
+
 alias _git_stat="git status"
